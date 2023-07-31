@@ -1,0 +1,38 @@
+{% extends "app/base.html" %}
+{% block content %}
+    <div><br></div>
+    <h1 class="display-1">Liste de tous les utilisateurs</h1>
+    <div><br></div>
+    <div class="table-data">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>N*</th>
+                    <th>Non</th>
+                    <th>N*Teléphone</th>
+                    <th>Courriel</th>
+                    <th>Operateur</th>
+                    <th>Solde</th>
+                </tr>
+            </thead>
+            <tbody>
+                    {% for users in utilisateurs %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ users.nom_utilisateur }}</td>
+                        <td>{{ users.numero_telephone }}</td>
+                        <td>{{ users.courriel }}</td>
+                        <td>{{ users.operateur }}</td>
+                        <td>{{ users.solde }}</td>
+                    </tr>
+                    {% endfor %}
+            </tbody>
+        </table>
+    </div> 
+{% endblock %}
+
+
+
+{% block js %}
+
+{% endblock %}

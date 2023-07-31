@@ -1,0 +1,53 @@
+{% extends "app/base.html" %}
+{% block content %}
+
+    <h2>Tableau De Bord</h2>
+    <div class="promo_card">
+        <h1>Bienvenue à l'interface de TRANSFERT</h1>
+        <!-- <span>Lorem ipsum dolor sit amet.</span> -->
+        <!-- <button>Se Connecter à Son Compte</button> -->
+        <a href="login" type="button" style="background-color: white;padding: 10px;border-radius: inherit; color: black;" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#ModalForm">
+            Se Connecter à Mon compte!
+        </a>
+        <div>
+            <br>
+        </div>
+    </div>
+    <div><br></div>
+    <h1 class="display-1">Les de toutes les transactions effectuées</h1>
+    <div><br></div>
+    <div class="table-data">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>N*</th>
+                    <th>Sender</th>
+                    <th>Reciver</th>
+                    <th>Amont</th>
+                    <th>Statut</th>
+                    <th>De...Vers</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for transaction in transactions %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ transaction.sender_name }}</td>
+                        <td>{{ transaction.receiver_name }}</td>
+                        <td>{{ transaction.amount }}</td>
+                        <td>{{ transaction.status }}</td>
+                        <td>{{ transaction.typetransaction }}</td>
+                        <td>{{ transaction.timestamp }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div> 
+{% endblock %}
+
+
+
+{% block js %}
+
+{% endblock %}
