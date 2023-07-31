@@ -32,9 +32,9 @@
             <nav>
                 <div class="side_navbar">
                     <span>Main Menu</span>
-                    <a href="#" class="active">Tableau De Bord</a>
-                    <a href="#">Profile</a>
-                    <a href="#">History</a>
+                    <a href="http://127.0.0.1:8000/" class="active">Tableau De Bord</a>
+                    <a href="utilisateur">Utilisateurs</a>
+                    <!-- <a href="#">History</a>
                     <a href="#">Application</a>
                     <a href="#">My Account</a>
                     <a href="#">Documnets</a>
@@ -44,7 +44,7 @@
                     <a href="#">Paypal</a>
                     <a href="#">EasyPay</a>
                     <a href="#">SadaPay</a>
-                    </div>
+                    </div> -->
                 </div>
             </nav>
 
@@ -57,9 +57,9 @@
                         <h1>Bienvenue {{ infoutilisateur.nom_utilisateur }}</h1>
                         <!-- <span>Lorem ipsum dolor sit amet.</span> -->
                         <!-- <button>Se Connecter à Son Compte</button> -->
-                        <h4>Votre Solde Est De : {{ infoutilisateur.solde }}</h4>
+                        <h4>Votre Solde Est De : {{ infoutilisateur.solde }}; Numéro De téléphone est : {{ infoutilisateur.numero_telephone }} et votre operateur est : {{ infoutilisateur.operateur }}</h4>
                         <div><br></div>
-                        <a href="login/utilisateur/transfert" type="button" style="background-color: white;padding: 10px;border-radius: inherit; color: black;" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#ModalForm">
+                        <a href="utilisateur/transfert/" type="button" style="background-color: white;padding: 10px;border-radius: inherit; color: black;" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#ModalForm">
                             INITIER UN TRANSFERT
                         </a>
                         <div>
