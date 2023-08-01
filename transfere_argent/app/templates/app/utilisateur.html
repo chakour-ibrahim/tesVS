@@ -59,8 +59,7 @@
                         <!-- <button>Se Connecter à Son Compte</button> -->
                         <h4>Votre Solde Est De : {{ infoutilisateur.solde }}; Numéro De téléphone est : {{ infoutilisateur.numero_telephone }} et votre operateur est : {{ infoutilisateur.operateur }}</h4>
                         <div><br></div>
-                        <a href="utilisateur/transfert/" type="button" style="background-color: white;padding: 10px;border-radius: inherit; color: black;" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#ModalForm">
-                            INITIER UN TRANSFERT
+                        <a href="utilisateur/transfert/{{ infoutilisateur.numero_telephone }}" type="button" style="background-color: white;padding: 10px;border-radius: inherit; color: black;" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#ModalForm">                            INITIER UN TRANSFERT
                         </a>
                         <div>
                             <br>
@@ -92,8 +91,7 @@
                                         <td>{{ transaction.status }}</td>
                                         <td>{{ transaction.typetransaction }}</td>
                                         <td>
-                                            <a href="login/utilisateur/transfertupdate" type="button" style="background-color: white;padding: 10px;border-radius: inherit; color: black;" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#ModalForm">
-                                            gérer
+                                            <a href="utilisateur/transfertupdate/{{ transaction.transaction_id }}" type="button" style="background-color: white;padding: 10px;border-radius: inherit; color: black;" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#ModalForm">                                            gérer
                                             </a>
                                         </td>
                                     </tr>

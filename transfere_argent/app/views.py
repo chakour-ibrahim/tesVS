@@ -46,12 +46,22 @@ def utilisateur(request):
 def transfert(request):
     return render(request, 'app/transfert.html')
 
-def transfertupdate(request):
-    return render(request, 'app/transfertupdate.html')
+def transfertupdate(request, id_transaction):
+
+    transaction = Transaction.objects.get(transaction_id=id_transaction)
+
+    if request.method == 'POST':
+        transaction.status = request.POST['typenvoi']
+        transaction.save()
+              
+        return redirect('/')
+       
+    return render(request, 'app/transfertupdate.html',  {'transaction':transaction} )
 
 
 
-def transaction(request):
+def transaction(request, phone_sender):
+    utilisateur = Utilisateur.objects.get(numero_telephone=phone_sender)
     if request.method == 'POST':
         numerosender = request.POST['numerosender']
         numeroreciver = request.POST['numeroreciver']
@@ -84,7 +94,7 @@ def transaction(request):
             transaction.save()
             return render(request, '/')
     
-    return render(request, 'app/transfert.html')
+    return render(request, 'app/transfert.html', {'utilisateur':utilisateur})
 
 
 def updatetransaction(request):

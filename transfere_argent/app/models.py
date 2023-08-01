@@ -71,4 +71,4 @@ class Transaction(models.Model):
     typetransaction = models.CharField(max_length=100)
 
     def __str__(self):
-        return f"{self.sender_name} {self.receiver_name} {self.amount} {self.timestamp} {self.status} {self.typetransaction}"
+        return f"{self.transaction_id} {self.sender_name} {self.receiver_name} {self.amount} {self.timestamp} {self.status} {self.typetransaction}"
