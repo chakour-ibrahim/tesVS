@@ -162,9 +162,9 @@ a{color:inherit;text-decoration:none}
 </style>
 
 <div class="login-wrap">
-    <div class="login-html">
+    <div class="login-html" style="padding-top: 40px;">
       <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Se Connecte</label>
-      <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Se Déconnecter</label>
+      <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">S'enregister</label>
       <div class="login-form">
         {% if error_message %}
           <p>{{ error_message }}</p>
@@ -193,31 +193,37 @@ a{color:inherit;text-decoration:none}
             </div>
           </div>
         </form>
-        <div class="sign-up-htm">
-          <div class="group">
-            <label for="user" class="label">Username</label>
-            <input id="user" type="text" class="input">
+        <form action="">
+          <div class="sign-up-htm">
+            <div class="group">
+              <label for="nomutilisateur" class="label">Nom utilisateur</label>
+              <input id="nomutilisateur" name="nomutilisateur" type="text" class="input">
+            </div>
+            <div class="group">
+              <label for="pass" class="label">Password</label>
+              <input id="pass" type="password" class="input" data-type="password">
+            </div>
+            <div class="group">
+              <label for="telephone" class="label">Numéro de téléphone</label>
+              <input id="telephone" type="text" name="telephone" class="input">
+            </div>
+            <div class="group">
+              <label for="email" class="label">Email Address</label>
+              <input id="email" name="email" type="email" class="input">
+            </div>
+            <div class="group">
+              <label for="operateur" class="label">Opérateur</label>
+              <input id="operateur" name="operateur" type="email" class="input">
+            </div>
+            <div class="group">
+              <label for="montant" class="label">Solde</label>
+              <input id="montant" name="montant" type="number" class="input">
+            </div>
+            <div class="group">
+              <input type="submit" class="button" value="enregister">
+            </div>
           </div>
-          <div class="group">
-            <label for="pass" class="label">Password</label>
-            <input id="pass" type="password" class="input" data-type="password">
-          </div>
-          <div class="group">
-            <label for="pass" class="label">Repeat Password</label>
-            <input id="pass" type="password" class="input" data-type="password">
-          </div>
-          <div class="group">
-            <label for="pass" class="label">Email Address</label>
-            <input id="pass" type="text" class="input">
-          </div>
-          <div class="group">
-            <input type="submit" class="button" value="Sign Up">
-          </div>
-          <div class="hr"></div>
-          <div class="foot-lnk">
-            <label for="tab-1">Already Member?</a>
-          </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>  
